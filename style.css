@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+}
+
+/* main background */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(circle, #1b2735 0%, #090a0f 60%, #000000 100%);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* star field */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image:
+        radial-gradient(3px 3px at 10% 20%, rgba(255,255,255,1), transparent),
+        radial-gradient(3px 3px at 25% 70%, rgba(255,255,255,0.9), transparent),
+        radial-gradient(3px 3px at 40% 30%, rgba(255,255,255,1), transparent),
+        radial-gradient(3px 3px at 60% 80%, rgba(255,255,255,0.9), transparent),
+        radial-gradient(3px 3px at 80% 40%, rgba(255,255,255,1), transparent),
+        radial-gradient(3px 3px at 90% 75%, rgba(255,255,255,0.9), transparent),
+        radial-gradient(2px 2px at 15% 50%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(2px 2px at 35% 15%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 55% 55%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(2px 2px at 70% 20%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 85% 60%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1.5px 1.5px at 5% 80%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1.5px 1.5px at 30% 90%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 50% 10%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1.5px 1.5px at 75% 90%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1.5px 1.5px at 95% 30%, rgba(255,255,255,0.6), transparent);
+    animation: twinkle 6s infinite alternate;
+    opacity: 0.95;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.6; }
+    to   { opacity: 1; }
+}
+
+/* cards */
+.main-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 24px 28px;
+    border-radius: 16px;
+    border: 1px solid #ffffff33;
+    box-shadow: 0 0 25px #000000aa;
+    max-width: 420px;
+    text-align: center;
+}
+
+/* main (center) card animation */
+#mainCard {
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+
+
+/* bottom-right card base position */
+.bottom-card {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 320px;
+    max-width: 90vw;
+}
+
+/* bottom-right card starts hidden by opacity only */
+#cosmicCard {
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+/* text styles */
+h1 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: #d0d6f7;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+input[type="date"] {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+button {
+    margin-top: 14px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    background: #4f46e5;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #6366f1;
+}
+
+/* glowing + fade-in text */
+.main-message {
+    min-height: 40px;
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #e5e7ff;
+    text-shadow: 0 0 6px rgba(129, 140, 248, 0.9),
+                 0 0 14px rgba(129, 140, 248, 0.8);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fact-line {
+    font-size: 0.9rem;
+    color: #a5b4fc;
+    margin-top: 6px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.9s ease 0.2s, transform 0.9s ease 0.2s;
+}
+
+.show-text {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+.music-btn {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    background: rgba(15, 23, 42, 0.9);
+    color: #e5e7eb;
+    cursor: pointer;
+    font-size: 0.85rem;
+    box-shadow: 0 0 12px rgba(30, 64, 175, 0.8);
+}
+
+.music-btn:hover {
+    background: rgba(30, 64, 175, 0.95);
+}
+.event-card {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 260px;
+    max-width: 70vw;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: rgba(15, 23, 42, 0.92);
+    border-radius: 12px;
+    border: 1px solid #4b5563;
+    box-shadow: 0 0 18px rgba(15, 23, 42, 0.9);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.event-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.event-text h3 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #e5e7eb;
+}
+
+.event-text p {
+    margin: 2px 0 0 0;
+    font-size: 0.8rem;
+    color: #cbd5f5;
+}
+
+.event-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.apod-info {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    max-width: 520px;
+    width: 90vw;
+    background: rgba(15, 23, 42, 0.88);
+    border-radius: 12px;
+    padding: 10px 14px;
+    border: 1px solid #4b5563;
+    box-shadow: 0 0 18px rgba(15, 23, 42, 0.9);
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.apod-info h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #e5e7eb;
+}
+
+.apod-info p {
+    margin: 4px 0 0 0;
+    font-size: 0.8rem;
+    color: #cbd5f5;
+}
+
+.apod-visible {
+    opacity: 1;
+}

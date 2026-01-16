@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="stars"></div>
+
+    <div class="main-card" id="mainCard">
+        <h1>Space Journey for You</h1>
+        <p class="subtitle">Enter your birth date to see your cosmic journey.</p>
+
+        <label for="birthdate">Your Birth Date</label>
+        <input type="date" id="birthdate">
+
+        <button id="showJourney">Show My Space Journey</button>
+
+        <p id="result" style="margin-top:16px;"></p>
+    </div>
+
+    <!-- Bottom‑right glowing card (always in DOM) -->
+    <div class="main-card bottom-card" id="cosmicCard">
+        <p id="cosmicMessage" class="main-message"></p>
+        <p id="fact" class="fact-line"></p>
+    </div>
+        <!-- Top-right event box -->
+    <div class="event-card" id="eventCard">
+        <img src="event-image.jpg" alt="Historic event" class="event-image">
+        <div class="event-text">
+            <h3>Great thing near your day</h3>
+            <p id="eventDescription">
+                In this era, humanity made a remarkable step forward among the stars.
+            </p>
+        </div>
+    </div>
+    
+    <div class="apod-info" id="apodInfo">
+    <h3 id="apodTitle"></h3>
+    <p id="apodNote"></p>
+</div>
+
+
+    <audio id="bgMusic" loop>
+        <source src="space-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicToggle" class="music-btn">
+        Play Space Music
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
